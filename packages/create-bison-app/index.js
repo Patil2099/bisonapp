@@ -43,10 +43,6 @@ module.exports = async ({ name, ...answers }) => {
         await index.write();
         const id = await index.writeTree();
 
-        if (variables.githubRepo) {
-          await nodegit.Remote.create(repo, "origin", variables.githubRepo);
-        }
-
         const author = nodegit.Signature.now(
           "Bison Template",
           "hello@echobind.com"
